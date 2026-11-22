@@ -45,10 +45,17 @@ def load_sample() -> pd.DataFrame:
     return df
 
 
-@st.cache_resource(show_spinner=False)
+@st.cache_resource(show_spinner="Preparing models (first load only)...")
 def load_models():
-    return (joblib.load(ROOT / "models" / "demand_model.joblib"),
-            joblib.load(ROOT / "models" / "price_model.joblib"))
+    """Load the saved models; if they were saved with a different library version
+    (common between Colab and Streamlit Cloud), re-train quickly from the bundled sample."""
+    try:
+        return (joblib.load(ROOT / "models" / "demand_model.joblib"),
+                joblib.load(ROOT / "models" / "price_model.joblib"))
+    except Exception:
+        from shelfsense.train import train_demand, train_price
+        feat = add_features(load_sample())
+        return train_demand(feat)[0], train_price(feat)[0]
 
 
 @st.cache_data(show_spinner=False)
