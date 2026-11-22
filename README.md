@@ -99,7 +99,7 @@ On Windows PowerShell use `$env:PYTHONPATH="src"` first. Or open the Colab noteb
 - Explainability (SHAP) on the prediction pages
 
 ## Data source and credit
-Dataset: *Amazon Product Sales Data – 42k Items (2025)* by srisyra02 on Kaggle, <https://www.kaggle.com/datasets/srisyra02/amazon-product-sales-data-42k-items-2025>. Check the dataset page for its license. All code, analysis, features, models and the app in this repository are original work.
+Dataset: *Amazon Product Sales Data – 42k Items (2025) by Client. Check the dataset page for its license. All code, analysis, features, models and the app in this repository are original work.
 
 ## License
 Code is released under the [MIT License](LICENSE).
