@@ -1,8 +1,8 @@
 <div align="center">
 
-# 🛒 ShelfSense
+# 🛒 Amz-Intelligence
 
-**Demand and price intelligence for online electronics listings.**
+**Amazon Business intelligence**
 Clean messy listing data, explore the market, predict how well a product will sell, and sanity-check its price, all in an interactive Streamlit app.
 
 [![CI](https://github.com/AsadAli323/amz-intelligence/actions/workflows/ci.yml/badge.svg)](https://github.com/AsadAli323/amz-intelligence/actions)
@@ -11,12 +11,12 @@ Clean messy listing data, explore the market, predict how well a product will se
 ![Python](https://img.shields.io/badge/python-3.10%2B-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-![Home page of the app](docs/home.png)
+### [Try the live app → amz-intelligence.streamlit.app](https://amz-intelligence.streamlit.app)
 
 </div>
 
 ## Why this project?
-Sellers and analysts on large marketplaces constantly ask: *Will this product sell? Is it priced sensibly? Who am I competing against?* ShelfSense turns ~42,000 raw, messy listing rows into answers to those questions.
+Sellers and analysts on large marketplaces constantly ask: *Will this product sell? Is it priced sensibly? Who am I competing against?* Amz-Intelligence turns ~42,000 raw, messy listing rows into answers to those questions.
 
 ## What the app does
 | Page | What you get |
@@ -59,7 +59,7 @@ Full numbers for every candidate model are in [`reports/metrics.json`](reports/m
 ```
 amz-intelligence/
 ├── app/                  # Streamlit multi-page app (Home.py + pages/)
-├── src/shelfsense/       # cleaning.py, train.py (importable package)
+├── src/Amz-Intelligence/       # cleaning.py, train.py (importable package)
 ├── notebooks/            # End-to-end Colab notebook
 ├── models/               # Trained pipelines (.joblib)
 ├── reports/              # metrics.json, figures, make_figures.py
@@ -80,7 +80,7 @@ The app works immediately with the bundled sample and pre-trained models.
 
 **Retrain on the full data** (download it first, see `data/README.md`):
 ```bash
-PYTHONPATH=src python -m shelfsense.train --raw data/raw/amazon_sales_data_uncleaned.csv
+PYTHONPATH=src python -m Amz-Intelligence.train --raw data/raw/amazon_sales_data_uncleaned.csv
 ```
 On Windows PowerShell use `$env:PYTHONPATH="src"` first. Or open the Colab notebook via the badge above.
 
